@@ -2,50 +2,53 @@ package model;
 
 public class Passager {
 
-	private Integer id_passager;
-	private String nom_passager;
-	private String prenom_passager;
+	private Integer id;
+	private String nom;
+	private String prenom;
 	private Adresse adresse;
 	
 	//constructeurs passager
 	
 	//vide
+	
 	public Passager() {
-	}
-	//complet
-	public Passager(Integer id_passager, String nom_passager, String prenom_passager, Adresse adresse) {
 		super();
-		this.id_passager = id_passager;
-		this.nom_passager = nom_passager;
-		this.prenom_passager = prenom_passager;
+	}
+
+	//complet
+	public Passager(Integer id, String nom, String prenom, Adresse adresse) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
 		this.adresse = adresse;
 	}
 	//sans id
-	public Passager(String nom_passager, String prenom_passager, Adresse adresse) {
+	public Passager(String nom, String prenom, Adresse adresse) {
 		super();
-		this.nom_passager = nom_passager;
-		this.prenom_passager = prenom_passager;
+		this.nom = nom;
+		this.prenom = prenom;
 		this.adresse = adresse;
 	}
 	
 	//getter setter
-	public Integer getId_passager() {
-		return id_passager;
+	public Integer getIdPassager() {
+		return id;
 	}
-	public void setId_passager(Integer id_passager) {
-		this.id_passager = id_passager;
+	public void setIdPassager(Integer id) {
+		this.id = id;
 	}
-	public String getNom_passager() {
-		return nom_passager;
+	public String getNomPassager() {
+		return nom;
 	}
-	public void setNom_passager(String nom_passager) {
-		this.nom_passager = nom_passager;
+	public void setNomPassager(String nom) {
+		this.nom= nom;
 	}
-	public String getPrenom_passager() {
-		return prenom_passager;
+	public String getPrenomPassager() {
+		return prenom;
 	}
-	public void setPrenom_passager(String prenom_passager) {
-		this.prenom_passager = prenom_passager;
+	public void setPrenomPassager(String prenom_passager) {
+		this.prenom = prenom;
 	}
 	public Adresse getAdresse() {
 		return adresse;
