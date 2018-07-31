@@ -34,21 +34,22 @@ public class ClientMoral extends Client{
 		super();
 	}
 
-	public String gettitreMoral() {
+	public String getTitreMoral() {
 		return titreMoral;
 	}
 
-	public void settitreMoral(String titreMoral) {
+	public void setTitreMoral(String titreMoral) {
 		this.titreMoral = titreMoral;
 	}
 
-	public String getsiret() {
+	public String getSiret() {
 		return siret;
 	}
 
-	public void setsiret(String siret) {
+	public void setSiret(String siret) {
 		this.siret = siret;
 	}
+
 	
 	
 
