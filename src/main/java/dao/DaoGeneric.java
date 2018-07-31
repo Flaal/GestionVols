@@ -2,7 +2,7 @@ package dao;
 
 import java.util.List;
 
-public interface DaoGenerique<T, K> {
+public interface DaoGeneric<T, K> {
 	List<T> findAll();
 	
 	T findByKey(K key);
