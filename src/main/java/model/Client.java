@@ -42,7 +42,7 @@ public abstract class Client {
 	 * @param adresse
 	 * @param login
 	 */
-	public Client(String nom, String numeroTel, String numeroFax, String email, Adresse adresse, Login login) {
+	public Client(String nom, String numeroTel, String numeroFax, String email, Adresse adresse, Login login, List<Reservation> ListReservation) {
 		super();
 		this.nom = nom;
 		this.numeroTel = numeroTel;
