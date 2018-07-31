@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 /target/**
 /.classpath
 /.settings/**
 /.project
-=======
-/target/
->>>>>>> jonathan
+
