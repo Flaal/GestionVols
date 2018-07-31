@@ -1,20 +1,33 @@
 package dao;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
+import jdbc.util.Context;
 import model.Reservation;
+import sqlrequest.SQLRequestReservation;
 
 public class DaoReservationJbdcImpl implements DaoReservation{
 
 	@Override
 	public List<Reservation> findAll() {
-		// TODO Auto-generated method stub
+		List<Reservation> reservations = new ArrayList<>();
+		SQLRequestReservation requetes = new SQLRequestReservation();
+		Context ctx = Context.getInstance();
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			st = ctx.getConnection().createStatement();
+			rs = requetes.findAllReservation(st);
+		}
 		return null;
 	}
 
 	@Override
-	public Reservation findByKey(Long key) {
-		// TODO Auto-generated method stub
+	public Reservation findByKey(Integer key) {
+		
 		return null;
 	}
 
@@ -37,7 +50,7 @@ public class DaoReservationJbdcImpl implements DaoReservation{
 	}
 
 	@Override
-	public void deleteByKey(Long key) {
+	public void deleteByKey(Integer key) {
 		// TODO Auto-generated method stub
 		
 	}
