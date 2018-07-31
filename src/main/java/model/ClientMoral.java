@@ -15,6 +15,14 @@ public class ClientMoral extends Client{
 		this.siret = siret;
 	}
 	
+	public ClientMoral(Integer id, String nom, String numeroTel, String numeroFax, String email, Adresse adresse,
+		 String titreMoral, String siret) {
+		super(id, nom, numeroTel, numeroFax, email, adresse);
+		this.titreMoral = titreMoral;
+		this.siret = siret;
+	}
+	
+	
 	public ClientMoral(String nom, String numeroTel, String numeroFax, String email, Adresse adresse,
 			Login login, String titreMoral, String siret, List<Reservation> ListReservation) {
 		super(nom, numeroTel, numeroFax, email, adresse, login, ListReservation);

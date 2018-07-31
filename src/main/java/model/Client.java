@@ -51,6 +51,18 @@ public abstract class Client {
 		this.adresse = adresse;
 		this.login = login;
 	}
+	
+	
+
+	public Client(Integer id, String nom, String numeroTel, String numeroFax, String email, Adresse adresse) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.numeroTel = numeroTel;
+		this.numeroFax = numeroFax;
+		this.email = email;
+		this.adresse = adresse;
+	}
 
 	/**
 	 * 

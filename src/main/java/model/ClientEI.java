@@ -15,6 +15,13 @@ public class ClientEI extends Client{
 		this.prenom = prenom;
 	}
 	
+	public ClientEI(Integer id, String nom, String numeroTel, String numeroFax, String email, Adresse adresse,
+			String titrePhysique, String prenom) {
+		super(id, nom, numeroTel, numeroFax, email, adresse);
+		this.titrePhysique = titrePhysique;
+		this.prenom = prenom;
+	}
+	
 	public ClientEI(String nom, String numeroTel, String numeroFax, String email, Adresse adresse,
 			Login login, String titrePhysique, String prenom, List<Reservation> ListReservation) {
 		super(nom, numeroTel, numeroFax, email, adresse, login, ListReservation);

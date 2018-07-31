@@ -21,6 +21,13 @@ public class ClientPhysique extends Client{
 		this.prenom = prenom;
 	}
 
+	public ClientPhysique(Integer id, String nom, String numeroTel, String numeroFax, String email, Adresse adresse,
+		 String titrePhysique, String prenom) {
+		super(id, nom, numeroTel, numeroFax, email, adresse);
+		this.titrePhysique = titrePhysique;
+		this.prenom = prenom;
+	}
+	
 	public ClientPhysique() {
 		super();
 	}
