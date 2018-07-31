@@ -7,6 +7,7 @@ import java.util.List;
 
 import jdbc.util.Closer;
 import jdbc.util.Context;
+import model.Adresse;
 import model.Passager;
 import sqlrequest.SQLRequestPassager;
 
@@ -22,15 +23,15 @@ class DaoPassagerJdbcImpl implements DaoPassager {
 			try {
 				st = rs.getStatement();
 				while (rs.next()) {
-					passagers.add(new Passager(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("codePostal"), rs.getString("ville"), rs.getString("pays")));
-				}
+					passagers.add(new Passager(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), new Adresse(rs.getString("adresse"), rs.getString("codePostal"), rs.getString("ville"), rs.getString("pays"))));
+					}
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				Closer.closeResultSet(rs);
 				Closer.closeStatement(st);
 			}
-			return adherents;
+			return passagers;
 		}
 
 		@Override
@@ -42,7 +43,7 @@ class DaoPassagerJdbcImpl implements DaoPassager {
 			try {
 				st = rs.getStatement();
 				if (rs.next()) {
-					adherent = new Adherent(rs.getInt("num_adherent"), rs.getString("prenom"), rs.getString("nom"));
+					passager = new Passager(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), new Adresse(rs.getString("adresse"), rs.getString("codePostal"), rs.getString("ville"), rs.getString("pays")));
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -50,57 +51,32 @@ class DaoPassagerJdbcImpl implements DaoPassager {
 				Closer.closeResultSet(rs);
 				Closer.closeStatement(st);
 			}
-			return adherent;
+			return passager;
 		}
 
 		@Override
 		public void insert(Passager obj) {
 			SQLRequestPassager requetes = new SQLRequestPassager();
-			obj.setNumeroPassager(requetes.insertPassager(Context.getInstance(), obj.getPrenom(), obj.getNom()));
-		}
-
-		@Override
-		public Adherent update(Adherent obj) {
-			SQLRequest requetes = new SQLRequest();
-			requetes.updateAdherent(Context.getInstance(), obj.getNumeroAdherent(), obj.getPrenom(), obj.getNom());
-			return obj;
-		}
-
-		@Override
-		public void delete(Adherent obj) {
-			deleteByKey(obj.getNumeroAdherent());
-		}
-
-		@Override
-		public void deleteByKey(Integer key) {
-			SQLRequest requetes = new SQLRequest();
-			requetes.deleteAdherent(Context.getInstance(), key);
-		}
-
-		@Override
-		public Passager findByKey(Integer key) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void insert(Passager obj) {
-			// TODO Auto-generated method stub
-			
+			obj.setId(requetes.insertPassager(Context.getInstance(), obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getPays()));
 		}
 
 		@Override
 		public Passager update(Passager obj) {
-			// TODO Auto-generated method stub
-			return null;
+			SQLRequestPassager requetes = new SQLRequestPassager();
+			requetes.updatePassager(Context.getInstance(), obj.getId(), obj.getNom(), obj.getPrenom(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getPays());
+			return obj;
 		}
 
 		@Override
 		public void delete(Passager obj) {
-			// TODO Auto-generated method stub
-			
+			deleteByKey(obj.getId());
 		}
 
-	}
+		@Override
+		public void deleteByKey(Integer key) {
+			SQLRequestPassager requetes = new SQLRequestPassager();
+			requetes.deletePassager(Context.getInstance(), key);
+		}
+
 
 }

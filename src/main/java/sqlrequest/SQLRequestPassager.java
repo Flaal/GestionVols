@@ -42,7 +42,7 @@ public class SQLRequestPassager {
 		return rs;
 	}
 
-	public int insertAdherent(Context ctx, String nom, String prenom, String adresse, String codePostal, String ville, String pays) {
+	public int insertPassager(Context ctx, String nom, String prenom, String adresse, String codePostal, String ville, String pays) {
 		PreparedStatement ps = null;
 		Statement st = null;
 		int numeroGenere = -1;
@@ -70,7 +70,7 @@ public class SQLRequestPassager {
 		return numeroGenere;
 	}
 
-	public int updateAdherent(Context ctx, int id, String nom, String prenom, String adresse, String codePostal, String ville, String pays) {
+	public int updatePassager(Context ctx, int id, String nom, String prenom, String adresse, String codePostal, String ville, String pays) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
@@ -92,7 +92,7 @@ public class SQLRequestPassager {
 		return retour;
 	}
 
-	public int deleteAdherent(Context ctx, int id) {
+	public int deletePassager(Context ctx, int id) {
 		int retour = 0;
 		PreparedStatement ps = null;
 		try {
