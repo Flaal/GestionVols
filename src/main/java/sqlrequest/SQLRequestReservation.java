@@ -11,7 +11,7 @@ import jdbc.util.Context;
 
 public class SQLRequestReservation {
 	private final static String FIND_ALL_RESA = "select * from Reservation";
-	private final static String GET_RESA_BY_KEY = "select * from Reservation where id=?";
+	private final static String FIND_RESA_BY_KEY = "select * from Reservation where id=?";
 	private final static String INSERT_RESA = "insert into Reservation(id, date, numero) values(nextval('seq_reservation'),?,?)";
 	private final static String UPDATE_RESA = "update Reservation set date=?, numero=? where id=?";
 	private final static String DELETE_RESA = "delete from Reservation where id=?";
@@ -26,11 +26,11 @@ public class SQLRequestReservation {
 		return rs;
 	}
 	
-	public ResultSet getReservationById(Context ctx, int key) {
+	public ResultSet findReservationByKey(Context ctx, int key) {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			ps = ctx.getConnection().prepareStatement(GET_RESA_BY_KEY);
+			ps = ctx.getConnection().prepareStatement(FIND_RESA_BY_KEY);
 			ps.setInt(1, key);
 			rs = ps.executeQuery();
 		} catch (Exception e) {
