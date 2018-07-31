@@ -27,7 +27,32 @@ public class Passager {
 		this.prenom_passager = prenom_passager;
 		this.adresse = adresse;
 	}
-
+	
+	//getter setter
+	public Integer getId_passager() {
+		return id_passager;
+	}
+	public void setId_passager(Integer id_passager) {
+		this.id_passager = id_passager;
+	}
+	public String getNom_passager() {
+		return nom_passager;
+	}
+	public void setNom_passager(String nom_passager) {
+		this.nom_passager = nom_passager;
+	}
+	public String getPrenom_passager() {
+		return prenom_passager;
+	}
+	public void setPrenom_passager(String prenom_passager) {
+		this.prenom_passager = prenom_passager;
+	}
+	public Adresse getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 	
 	
 }
