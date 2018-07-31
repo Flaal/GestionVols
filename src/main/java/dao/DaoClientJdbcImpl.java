@@ -113,9 +113,6 @@ class DaoClientJdbcImpl implements DaoClient {
 					t, ((ClientEI)obj).getTitrePhysique(), ((ClientEI)obj).getPrenom());
 			obj.setId(numeroGenere);
 			}
-		
-			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -124,8 +121,29 @@ class DaoClientJdbcImpl implements DaoClient {
 
 	@Override
 	public Client update(Client obj) {
-		// TODO Auto-generated method stub
-		return null;
+		SQLRequestClient requetes = new SQLRequestClient();
+		try {
+			String t;
+			if (obj instanceof ClientPhysique) {t="P";
+			int numeroGenere = requetes.update(Context.getInstance(), obj.getId(), obj.getNom(), obj.getEmail(),
+					obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(),
+					obj.getAdresse().getPays(), obj.getNumeroTel(), obj.getNumeroFax(), t, ((ClientPhysique)obj).getTitrePhysique(), ((ClientPhysique)obj).getPrenom());
+			obj.setId(numeroGenere);
+			}
+			else if (obj instanceof ClientMoral) {t="M";
+			int numeroGenere = requetes.update(Context.getInstance(), obj.getId(), obj.getNom(), obj.getEmail(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getPays(), obj.getNumeroTel(), obj.getNumeroFax(),
+					t, ((ClientMoral)obj).getTitreMoral(), ((ClientMoral)obj).getSiret());
+			obj.setId(numeroGenere);
+			}
+			else if (obj instanceof ClientEI) {t="E";
+			int numeroGenere = requetes.update(Context.getInstance(), obj.getId(), obj.getNom(), obj.getEmail(), obj.getAdresse().getAdresse(), obj.getAdresse().getCodePostal(), obj.getAdresse().getVille(), obj.getAdresse().getPays(), obj.getNumeroTel(), obj.getNumeroFax(),
+					t, ((ClientEI)obj).getTitrePhysique(), ((ClientEI)obj).getPrenom());
+			obj.setId(numeroGenere);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return obj;
 	}
 
 	@Override
