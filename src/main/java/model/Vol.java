@@ -1,14 +1,14 @@
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class Vol {
 
-	private Long id;
+	private Integer id;
 	private Date dateDepart;
 	private Date dateArrivee;
-	private Date heureDepdart;
+	private Date heureDepart;
 	private Date heureArrivee;
 	private List<Reservation> listReservation;
 
@@ -20,35 +20,35 @@ public class Vol {
 		super();
 		this.dateDepart = dateDepart;
 		this.dateArrivee = dateArrivee;
-		this.heureDepdart = heureDepdart;
+		this.heureDepart = heureDepdart;
 		this.heureArrivee = heureArrivee;
 	}
 
-	public Vol(Long id, Date dateDepart, Date dateArrivee, Date heureDepdart, Date heureArrivee) {
+	public Vol(Integer id, Date dateDepart, Date dateArrivee, Date heureDepdart, Date heureArrivee) {
 		super();
 		this.id = id;
 		this.dateDepart = dateDepart;
 		this.dateArrivee = dateArrivee;
-		this.heureDepdart = heureDepdart;
+		this.heureDepart = heureDepdart;
 		this.heureArrivee = heureArrivee;
 	}
 
-	public Vol(Long id, Date dateDepart, Date dateArrivee, Date heureDepdart, Date heureArrivee,
+	public Vol(Integer id, Date dateDepart, Date dateArrivee, Date heureDepdart, Date heureArrivee,
 			List<Reservation> listReservation) {
 		super();
 		this.id = id;
 		this.dateDepart = dateDepart;
 		this.dateArrivee = dateArrivee;
-		this.heureDepdart = heureDepdart;
+		this.heureDepart = heureDepdart;
 		this.heureArrivee = heureArrivee;
 		this.listReservation = listReservation;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -68,12 +68,12 @@ public class Vol {
 		this.dateArrivee = dateArrivee;
 	}
 
-	public Date getHeureDepdart() {
-		return heureDepdart;
+	public Date getHeureDepart() {
+		return heureDepart;
 	}
 
-	public void setHeureDepdart(Date heureDepdart) {
-		this.heureDepdart = heureDepdart;
+	public void setHeureDepart(Date heureDepart) {
+		this.heureDepart = heureDepart;
 	}
 
 	public Date getHeureArrivee() {
