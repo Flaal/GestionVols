@@ -5,6 +5,7 @@ public class Login {
 	private String login;
 	private String motDePasse;
 	private Boolean admin;
+	private Client client;
 
 	public Login() {
 
@@ -23,8 +24,8 @@ public class Login {
 		this.admin = admin;
 	}
 	
-	public Login(String nom, Integer numeroTel, Integer numeroFax, String email,Integer id, String login, String motDePasse, Boolean admin) {
-		super();
+	public Login(Client client,Integer id, String login, String motDePasse, Boolean admin) {
+		this.client=client;
 		this.id = id;
 		this.login = login;
 		this.motDePasse = motDePasse;
@@ -62,5 +63,15 @@ public class Login {
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
 	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+
 
 }
