@@ -1,11 +1,10 @@
 package model;
 
 import java.util.Date;
-import java.util.List;
 
 public class Reservation {
 	
-	private Long id;
+	private Integer id;
 	private Date date;
 	private Integer numero;
 	private Passager passager;
@@ -22,14 +21,14 @@ public class Reservation {
 		this.numero = numero;
 	}
 
-	public Reservation(Long id, Date date, Integer numero) {
+	public Reservation(Integer id, Date date, Integer numero) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.numero = numero;
 	}
 
-	public Reservation(Long id, Date date, Integer numero, Passager passager, Client client, Vol vol) {
+	public Reservation(Integer id, Date date, Integer numero, Passager passager, Client client, Vol vol) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -39,11 +38,11 @@ public class Reservation {
 		this.vol = vol;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
