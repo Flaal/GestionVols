@@ -5,11 +5,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import DAO.SQLRequest;
 import model.*;
 import sqlrequest.SQLRequestClient;
-import jdbc.Closer;
-import jdbc.Context;
 import jdbc.util.*;
 
 class DaoClientJdbcImpl implements DaoClient {
@@ -148,13 +145,23 @@ class DaoClientJdbcImpl implements DaoClient {
 
 	@Override
 	public void delete(Client obj) {
-		// TODO Auto-generated method stub
+		SQLRequestClient requetes = new SQLRequestClient();
+		try {
+			int nb = requetes.delete(Context.getInstance(), obj.getId());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
 	@Override
 	public void deleteByKey(Integer key) {
-		// TODO Auto-generated method stub
+		SQLRequestClient requetes = new SQLRequestClient();
+		try {
+			int nb = requetes.delete(Context.getInstance(), key);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
