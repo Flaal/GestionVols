@@ -33,21 +33,23 @@ public class ClientEI extends Client{
 		super();
 	}
 
-	public String gettitrePhysique() {
+	public String getTitrePhysique() {
 		return titrePhysique;
 	}
 
-	public void settitrePhysique(String titrePhysique) {
+	public void setTitrePhysique(String titrePhysique) {
 		this.titrePhysique = titrePhysique;
 	}
 
-	public String getprenom() {
+	public String getPrenom() {
 		return prenom;
 	}
 
-	public void setprenom(String prenom) {
+	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+
+	
 	
 	
 
